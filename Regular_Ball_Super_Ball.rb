@@ -1,10 +1,7 @@
 class Ball
-  def initialize(btype)
-    if btype != nil
-      @ball_type = btype
-    else
-      @ball_type = "regular"
-    end
+  attr_reader :ball_type
+  def initialize(ball_type="regular")
+    @ball_type = ball_type
   end
 end
     
