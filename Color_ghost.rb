@@ -1,34 +1,48 @@
 # question
-#Color Ghost
+# Color Ghost
 #
-#Create a class Ghost
+# Create a class Ghost
 #
-#Ghost objects are instantiated without any arguments.
+# Ghost objects are instantiated without any arguments.
 #
-#Ghost objects are given a random color attribute of white" or "yellow" or #"purple" or "red" when instantiated
+# Ghost objects are given a random color attribute of white" or "yellow" or # "purple" or "red" when instantiated
 #
-#ghost = Ghost.new
-#ghost.color  #=> "white" or "yellow" or "purple" or "red"
+# ghost = Ghost.new
+# ghost.color  #=> "white" or "yellow" or "purple" or "red"
 
 
 class Ghost
-  
   def color
     colrand = rand(4)
     if colrand == 0
-      puts "white"
+      "white"
     elsif colrand == 1
-      puts "yellow"
+      "yellow"
     elsif colrand == 2
-      puts "purple"
+      "purple"
     else
-      puts "red"
+      "red"
     end
-
-#    puts colrand
   end
 end
 
 # tests
 ghost = Ghost.new
 ghost.color
+
+# best practice 1
+class Ghost
+  def color
+    %w(white yellow purple red).sample
+  end
+end
+
+# best practice 2
+class Ghost
+  COLORS = %w(white yellow purple red)
+  attr_accessor :color
+  
+  def initialize
+    @color = COLORS.sample
+  end
+end
