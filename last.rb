@@ -1,6 +1,6 @@
 def last(block)
   block[block.length - 1] if block.class == Array
-  block[block.length - 1]
+  block[block.length - 1] if block.class == String
   block.join("")
 end
 
