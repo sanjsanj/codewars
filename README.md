@@ -1,2 +1,4 @@
 # codewars
-Scratch files and completed tests for Codewars kata
+Solutions for Codewars kata
+
+This is a repository of my scratch files, solutions and best practices for Codewars exercises
