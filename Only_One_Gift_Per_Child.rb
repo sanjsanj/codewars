@@ -13,13 +13,15 @@
 # hand_out_gift("Maria");
 # hand_out_gift("Peter"); // <-- must throw an error
 
+Ary = Array.new
+
 def hand_out_gift(name)
-  ary = Array.new
-  if ary.include?(name)
+  
+  if Ary.include?(name)
     raise "//"
   else
-    ary.push(name)
-    p true
+    Ary.push(name)
+    true
   end
 end
 
@@ -29,3 +31,10 @@ hand_out_gift("Alison")
 hand_out_gift("John")
 hand_out_gift("Maria")
 hand_out_gift("Peter")
+
+# best practice
+def hand_out_gift(name)
+  @names ||= []
+  raise if @names.include? name
+  @names << name
+end
