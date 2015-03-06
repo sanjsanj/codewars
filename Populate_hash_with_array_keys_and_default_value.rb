@@ -7,3 +7,8 @@
 def solution(keys, default_value)
   Hash[keys.product([default_value])]
 end
+
+# best practice
+def solution(keys, default_value)
+  Hash[keys.map {|key| [key, default_value]}]
+end
